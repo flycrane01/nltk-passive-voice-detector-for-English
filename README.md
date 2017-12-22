@@ -1,7 +1,9 @@
 # nltk-passive-voice-detector-for-English
 ## 中文说明
 依赖于NLTK库，感谢前人的贡献。
+
 本脚本可以识别出英语文本中的被动语态，包括主句和从句。
+
 被动语态识别规则：
 * 若一个句子中没有被动分词，则该句不可能是被动句 *
 * 若一个句子中仅有一个被动分词且其为“been”，则该句不可能为被动句 eg: He has been a teacher since 2000.
@@ -11,7 +13,9 @@
 
 ## Introduction
 This script is based on NLTK. Sincerest gratitude goes to the predecessors.
+
 As its name suggests, this script can automatically detect passive voice in English texts, be it in matrix clause or relative clause.
+
 Rules of detection:
 * If there is no PP in a sentence, the sentence can't be passive.
 * If there is only one PP in a sentence and it is "been", the sentence can't be passive. eg: He has been a teacher since 2000.
