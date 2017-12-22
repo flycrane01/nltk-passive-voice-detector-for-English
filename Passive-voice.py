@@ -15,10 +15,11 @@ def isPassive(sentence):
         for end in pos:
             chunk = tags[:end]
             start = 0
-            for i in range(len(chunk)-1, 0, -1):
+            for i in range(len(chunk), 0, -1):
                 last = chunk.pop()
                 if last == 'NN' or last == 'PRP':
-                    start = i + 1                                                          # get the chunk between PP and the previous NN or PRP (which in most cases are subjects)
+                    start = i                                                             # get the chunk between PP and the previous NN or PRP (which in most cases are subjects)
+                    break
             sentchunk = words[start:end]
             tagschunk = tags[start:end]
             verbspos = [i for i in range(len(tagschunk)) if tagschunk[i].startswith('V')] # get all the verbs in between
