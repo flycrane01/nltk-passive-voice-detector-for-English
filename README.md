@@ -21,5 +21,7 @@ Rules of detection:
 * If there is only one PP in a sentence and it is "been", the sentence can't be passive. eg: He has been a teacher since 2000.
 * If there is at least one PP other than "been" in a sentence, and all the verbs between the PP(s) and the nearest preposition or noun in front are a certain form of "be", the sentence is passive.
 (PP is short for "past participle")
+
 Due to a lack of large passive-voice-annotated corpora, the script is only examine on small-scale texts and the success rate is acceptable.
+
 A major drawback of this script is that all the work is entirely based on the POS_TAGGER of NLTK, whose accuracy determines the quality of the following work. To acheive the maximum efficiency, a tailor-made tagger must be trained first.
