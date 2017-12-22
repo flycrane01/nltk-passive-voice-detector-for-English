@@ -13,17 +13,16 @@ def isPassive(sentence):
     else:
         pos = [i for i in range(len(tags)) if tags[i] == 'VBN' and words[i] != 'been']  # gather all the PPs that are not "been".
         for end in pos:
-            queue = tags[:end]
+            chunk = tags[:end]
             start = 0
-            backup = queue[:]
-            for i in range(len(backup) - 1, 0, -1):
-                last = queue.pop()
+            for i in range(len(chunk)-1, 0, -1):
+                last = chunk.pop()
                 if last == 'NN' or last == 'PRP':
                     start = i + 1                                                          # get the chunk between PP and the previous NN or PRP (which in most cases are subjects)
             sentchunk = words[start:end]
             tagschunk = tags[start:end]
             verbspos = [i for i in range(len(tagschunk)) if tagschunk[i].startswith('V')] # get all the verbs in between
-            if verbspos != []:
+            if verbspos != []:                                                            # if there are no verbs in between, it's not passive
                 for i in verbspos:
                     if sentchunk[i].lower() not in beforms and sentchunk[i].lower() not in aux:  # check if they are all forms of "be" or auxiliaries such as "do" or "have".
                         break
