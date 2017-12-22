@@ -20,6 +20,7 @@ Rules of detection:
 * If there is no PP in a sentence, the sentence can't be passive.
 * If there is only one PP in a sentence and it is "been", the sentence can't be passive. eg: He has been a teacher since 2000.
 * If there is at least one PP other than "been" in a sentence, and all the verbs between the PP(s) and the nearest preposition or noun in front are a certain form of "be", the sentence is passive.
+
 (PP is short for "past participle")
 
 Due to a lack of large passive-voice-annotated corpora, the script is only examine on small-scale texts and the success rate is acceptable.
